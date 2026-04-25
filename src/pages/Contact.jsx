@@ -132,7 +132,7 @@ const Contact = () => {
                     <input
                       type="text" required name="name" value={formData.name} onChange={handleChange}
                       className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
-                      placeholder="John Doe"
+                      placeholder="Enter Your Name"
                     />
                   </div>
                   <div className="space-y-2">
@@ -140,7 +140,7 @@ const Contact = () => {
                     <input
                       type="email" required name="email" value={formData.email} onChange={handleChange}
                       className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
-                      placeholder="john@example.com"
+                      placeholder="Enter Your Mail"
                     />
                   </div>
                 </div>
