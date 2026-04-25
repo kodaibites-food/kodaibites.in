@@ -11,7 +11,7 @@ const Home = () => {
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
-      <section className="relative h-[90vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[100dvh] md:min-h-[90vh] flex items-center justify-center overflow-hidden pt-20 pb-12">
         <div className="absolute inset-0 z-0">
           <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/70 to-slate-900/40 z-10" />
           <img
@@ -38,16 +38,16 @@ const Home = () => {
             <p className="text-xl text-slate-200 mb-10 max-w-2xl leading-relaxed">
               We craft unforgettable dining experiences with locally sourced ingredients, stunning presentations, and flawless service for weddings, corporate events, and private parties all over Tamil Nadu.
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-col sm:flex-row gap-4">
               <Link
                 to="/contact"
-                className="bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand/30 flex items-center gap-2"
+                className="w-full sm:w-auto bg-brand hover:bg-brand-dark text-white px-8 py-4 rounded-full font-bold text-lg transition-all transform hover:scale-105 shadow-xl shadow-brand/30 flex items-center justify-center gap-2"
               >
                 Book Your Event <ArrowRight size={20} />
               </Link>
               <Link
                 to="/menu"
-                className="bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center gap-2"
+                className="w-full sm:w-auto bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/30 text-white px-8 py-4 rounded-full font-bold text-lg transition-all flex items-center justify-center gap-2"
               >
                 View Our Menu
               </Link>

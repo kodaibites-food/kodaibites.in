@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { Filter } from 'lucide-react';
 import { menuItems } from '../data/menuData';
 import DishCard from '../components/DishCard';
 
 const Menu = () => {
   const [filter, setFilter] = useState('All');
   const [typeFilter, setTypeFilter] = useState('All');
+  const [isMobileFiltersOpen, setIsMobileFiltersOpen] = useState(false);
 
   const categories = ['All', ...new Set(menuItems.map(item => item.category))];
   const types = ['All', 'veg', 'non-veg'];
@@ -22,7 +24,7 @@ const Menu = () => {
       <div className="bg-slate-900 text-white py-16 mb-12 relative overflow-hidden">
         <div className="absolute inset-0 opacity-20 bg-[url('https://images.unsplash.com/photo-1495195134817-a165d42e2751?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center mix-blend-overlay" />
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <h1 className="text-5xl font-bold font-display mb-4">Our <span className="text-brand">Menu</span></h1>
+          <h1 className="text-5xl font-bold font-display mb-4 text-white">Our <span className="text-brand">Menu</span></h1>
           <p className="text-lg text-slate-300 max-w-2xl mx-auto">
             Explore our curated selection of exquisite dishes, crafted with the finest ingredients to delight your palate.
           </p>
@@ -31,42 +33,60 @@ const Menu = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Filters */}
-        <div className="flex flex-col md:flex-row justify-between items-center gap-6 mb-12 bg-white p-4 rounded-2xl shadow-sm border border-slate-100">
+        <div className="mb-12 bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
           
-          {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2">
-            {categories.map(cat => (
-              <button
-                key={cat}
-                onClick={() => setFilter(cat)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                  filter === cat 
-                    ? 'bg-slate-900 text-white shadow-md' 
-                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
-                }`}
-              >
-                {cat}
-              </button>
-            ))}
+          {/* Mobile Filter Toggle */}
+          <div className="md:hidden flex justify-between items-center p-4">
+            <span className="font-medium text-slate-700 flex items-center gap-2">
+              <Filter size={18} className="text-brand" />
+              Filters
+            </span>
+            <button 
+              onClick={() => setIsMobileFiltersOpen(!isMobileFiltersOpen)}
+              className="bg-slate-100 text-slate-600 px-4 py-2 rounded-full text-sm font-medium hover:bg-slate-200 transition-colors"
+            >
+              {isMobileFiltersOpen ? 'Close' : 'Expand'}
+            </button>
           </div>
 
-          {/* Type Filter */}
-          <div className="flex gap-2 bg-slate-100 p-1 rounded-full">
-            {types.map(type => (
-              <button
-                key={type}
-                onClick={() => setTypeFilter(type)}
-                className={`px-4 py-2 rounded-full text-sm font-medium capitalize transition-all ${
-                  typeFilter === type 
-                    ? type === 'veg' ? 'bg-emerald-500 text-white shadow-sm' 
-                      : type === 'non-veg' ? 'bg-red-500 text-white shadow-sm'
-                      : 'bg-white text-slate-900 shadow-sm'
-                    : 'text-slate-500 hover:text-slate-700'
-                }`}
-              >
-                {type}
-              </button>
-            ))}
+          {/* Filter Options */}
+          <div className={`${isMobileFiltersOpen ? 'flex' : 'hidden'} md:flex flex-col md:flex-row justify-between items-center gap-6 p-4 pt-0 md:pt-4 border-t border-slate-100 md:border-none`}>
+            
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 w-full md:w-auto">
+              {categories.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => setFilter(cat)}
+                  className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
+                    filter === cat 
+                      ? 'bg-slate-900 text-white shadow-md' 
+                      : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                  }`}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
+
+            {/* Type Filter */}
+            <div className="flex gap-2 bg-slate-100 p-1 rounded-full w-full md:w-auto justify-center">
+              {types.map(type => (
+                <button
+                  key={type}
+                  onClick={() => setTypeFilter(type)}
+                  className={`flex-1 md:flex-none px-4 py-2 rounded-full text-sm font-medium capitalize transition-all text-center ${
+                    typeFilter === type 
+                      ? type === 'veg' ? 'bg-emerald-500 text-white shadow-sm' 
+                        : type === 'non-veg' ? 'bg-red-500 text-white shadow-sm'
+                        : 'bg-white text-slate-900 shadow-sm'
+                      : 'text-slate-500 hover:text-slate-700'
+                  }`}
+                >
+                  {type}
+                </button>
+              ))}
+            </div>
           </div>
         </div>
 
