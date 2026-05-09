@@ -39,11 +39,11 @@ const DishCard = ({ item }) => {
       
       <div className="p-6 flex flex-col flex-grow">
         <div className="flex justify-between items-start mb-3 gap-4">
-          <h3 className="text-xl font-bold font-display text-slate-800 group-hover:text-brand transition-colors">
+          <h3 className="text-xl font-bold font-display text-slate-800 dark:text-slate-100 group-hover:text-brand dark:group-hover:text-brand-light transition-colors">
             {item.name}
           </h3>
         </div>
-        <p className="text-slate-600 line-clamp-2 flex-grow">
+        <p className="text-slate-600 dark:text-slate-300 line-clamp-2 flex-grow">
           {item.description}
         </p>
       </div>

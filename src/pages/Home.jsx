@@ -57,11 +57,11 @@ const Home = () => {
       </section>
 
       {/* Featured Dishes Section */}
-      <section className="py-24 bg-slate-50 relative">
+      <section className="py-24 bg-slate-50 dark:bg-slate-900 relative transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-display mb-4">Signature <span className="text-brand">Dishes</span></h2>
-            <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+            <h2 className="text-4xl font-bold font-display mb-4 text-slate-900 dark:text-white">Signature <span className="text-brand">Dishes</span></h2>
+            <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-lg">
               Discover a taste of our most beloved culinary creations, crafted with passion and premium ingredients.
             </p>
           </div>
@@ -82,7 +82,7 @@ const Home = () => {
       </section>
 
       {/* Services Preview Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-white dark:bg-slate-800 transition-colors duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <motion.div
@@ -92,30 +92,30 @@ const Home = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-4xl font-bold font-display mb-4">Services Tailored to <br /><span className="text-brand">Your Needs</span></h2>
-                <p className="text-slate-600 text-lg leading-relaxed">
+                <h2 className="text-4xl font-bold font-display mb-4 text-slate-900 dark:text-white">Services Tailored to <br /><span className="text-brand">Your Needs</span></h2>
+                <p className="text-slate-600 dark:text-slate-300 text-lg leading-relaxed">
                   From intimate gatherings to grand celebrations, we provide bespoke catering solutions that exceed expectations and leave a lasting impression on your guests.
                 </p>
               </div>
 
               <div className="space-y-6">
-                <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-600">
                   <div className="bg-brand/10 p-4 rounded-xl text-brand h-fit">
                     <CalendarHeart size={28} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold font-display mb-2">Wedding Catering</h3>
-                    <p className="text-slate-600">Elegant menus designed to make your special day truly unforgettable.</p>
+                    <h3 className="text-xl font-bold font-display mb-2 text-slate-900 dark:text-white">Wedding Catering</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Elegant menus designed to make your special day truly unforgettable.</p>
                   </div>
                 </div>
 
-                <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 transition-colors border border-transparent hover:border-slate-100">
+                <div className="flex gap-4 p-4 rounded-2xl hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors border border-transparent hover:border-slate-100 dark:hover:border-slate-600">
                   <div className="bg-brand/10 p-4 rounded-xl text-brand h-fit">
                     <Users size={28} />
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold font-display mb-2">Corporate Events</h3>
-                    <p className="text-slate-600">Professional catering that impresses clients and energizes your team.</p>
+                    <h3 className="text-xl font-bold font-display mb-2 text-slate-900 dark:text-white">Corporate Events</h3>
+                    <p className="text-slate-600 dark:text-slate-300">Professional catering that impresses clients and energizes your team.</p>
                   </div>
                 </div>
               </div>
@@ -139,11 +139,11 @@ const Home = () => {
       </section>
 
       {/* FAQ Section for AEO */}
-      <section className="py-24 bg-slate-50">
+      <section className="py-24 bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold font-display mb-4">Frequently Asked <span className="text-brand">Questions</span></h2>
-            <p className="text-slate-600 text-lg">
+            <h2 className="text-4xl font-bold font-display mb-4 text-slate-900 dark:text-white">Frequently Asked <span className="text-brand">Questions</span></h2>
+            <p className="text-slate-600 dark:text-slate-300 text-lg">
               Find quick answers to common questions about our catering services across Tamil Nadu.
             </p>
           </div>
@@ -154,9 +154,9 @@ const Home = () => {
               { q: "How far in advance should I book catering for my wedding?", a: "For weddings and large corporate events, we recommend booking at least 1 to 2 months in advance to secure your date and allow ample time for menu tasting and planning." },
               { q: "Do you provide waitstaff and table setups?", a: "Yes, our comprehensive catering packages include professional waitstaff, elegant buffet or table setups, chafing dishes, and full cleanup services to ensure a seamless experience." }
             ].map((faq, idx) => (
-              <div key={idx} className="bg-white p-6 rounded-2xl shadow-sm border border-slate-100">
-                <h3 className="text-xl font-bold text-slate-900 mb-3">{faq.q}</h3>
-                <p className="text-slate-600 leading-relaxed">{faq.a}</p>
+              <div key={idx} className="bg-white dark:bg-slate-800 p-6 rounded-2xl shadow-sm border border-slate-100 dark:border-slate-700 transition-colors duration-300">
+                <h3 className="text-xl font-bold text-slate-900 dark:text-white mb-3">{faq.q}</h3>
+                <p className="text-slate-600 dark:text-slate-300 leading-relaxed">{faq.a}</p>
               </div>
             ))}
           </div>
