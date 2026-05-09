@@ -60,15 +60,15 @@ const Contact = () => {
   };
 
   return (
-    <div className="pt-24 pb-24 min-h-screen bg-slate-50 relative overflow-hidden">
+    <div className="pt-24 pb-24 min-h-screen bg-slate-50 dark:bg-slate-900 relative overflow-hidden transition-colors duration-300">
       {/* Background decoration */}
       <div className="absolute top-0 right-0 w-[800px] h-[800px] bg-brand/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3 -z-10" />
       <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-slate-900/5 rounded-full blur-3xl translate-y-1/3 -translate-x-1/3 -z-10" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-5xl font-bold font-display mb-6">Let's Plan Your <span className="text-brand">Event</span></h1>
-          <p className="text-lg text-slate-600">
+          <h1 className="text-5xl font-bold font-display mb-6 text-slate-900 dark:text-white">Let's Plan Your <span className="text-brand">Event</span></h1>
+          <p className="text-lg text-slate-600 dark:text-slate-300">
             Fill out the form below or reach out directly to discuss your catering needs. We're excited to work with you!
           </p>
         </div>
@@ -122,24 +122,24 @@ const Contact = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2">
-            <div className="bg-white p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100">
-              <h3 className="text-2xl font-bold font-display mb-8 text-slate-900">Send us an Inquiry</h3>
+            <div className="bg-white dark:bg-slate-800 p-8 md:p-10 rounded-3xl shadow-xl border border-slate-100 dark:border-slate-700 transition-colors duration-300">
+              <h3 className="text-2xl font-bold font-display mb-8 text-slate-900 dark:text-white">Send us an Inquiry</h3>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Full Name *</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Full Name *</label>
                     <input
                       type="text" required name="name" value={formData.name} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                       placeholder="Enter Your Name"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Email Address *</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Email Address *</label>
                     <input
                       type="email" required name="email" value={formData.email} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                       placeholder="Enter Your Mail"
                     />
                   </div>
@@ -147,28 +147,28 @@ const Contact = () => {
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Phone Number *</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Phone Number *</label>
                     <input
                       type="tel" required name="phone" value={formData.phone} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                       placeholder="+91 XXXXXXXXXX"
                     />
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Event Date</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Event Date</label>
                     <input
                       type="date" name="date" value={formData.date} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                     />
                   </div>
                 </div>
 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Event Type</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Event Type</label>
                     <select
                       name="eventType" value={formData.eventType} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                     >
                       <option>Wedding</option>
                       <option>Corporate Event</option>
@@ -178,20 +178,20 @@ const Contact = () => {
                     </select>
                   </div>
                   <div className="space-y-2">
-                    <label className="text-sm font-medium text-slate-700">Estimated Guests</label>
+                    <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Estimated Guests</label>
                     <input
                       type="number" name="guests" value={formData.guests} onChange={handleChange}
-                      className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors"
+                      className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors"
                       placeholder="e.g., 100"
                     />
                   </div>
                 </div>
 
                 <div className="space-y-2">
-                  <label className="text-sm font-medium text-slate-700">Additional Details</label>
+                  <label className="text-sm font-medium text-slate-700 dark:text-slate-300">Additional Details</label>
                   <textarea
                     rows="4" name="message" value={formData.message} onChange={handleChange}
-                    className="w-full bg-slate-50 border border-slate-200 px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand transition-colors resize-none"
+                    className="w-full bg-slate-50 dark:bg-slate-900 border border-slate-200 dark:border-slate-700 dark:text-white px-4 py-3 rounded-xl focus:outline-none focus:ring-2 focus:ring-brand/50 focus:border-brand dark:focus:border-brand-light transition-colors resize-none"
                     placeholder="Tell us about your vision, dietary requirements, or any special requests..."
                   ></textarea>
                 </div>

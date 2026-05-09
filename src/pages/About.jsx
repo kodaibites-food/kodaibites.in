@@ -11,7 +11,7 @@ const About = () => {
   ];
 
   return (
-    <div className="pt-24 min-h-screen bg-slate-50">
+    <div className="pt-24 min-h-screen bg-slate-50 dark:bg-slate-900 transition-colors duration-300">
       {/* Story Section */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-4xl mx-auto text-center">
@@ -24,7 +24,7 @@ const About = () => {
             <h1 className="text-4xl md:text-5xl font-bold font-display mb-6 leading-tight">
               Crafting Culinary <br /><span className="text-brand">Masterpieces</span> Since 2016
             </h1>
-            <div className="space-y-4 text-slate-600 text-lg leading-relaxed max-w-3xl mx-auto">
+            <div className="space-y-4 text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
               <p>
                 KodaiBites began with a simple philosophy: great food brings people together. Founded by Executive Chef Santhosh, what started as a small boutique operation has grown into the premier catering service all over Tamil Nadu.
               </p>
@@ -65,7 +65,7 @@ const About = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-display mb-4">Meet Our <span className="text-brand">Leadership</span></h2>
-          <p className="text-slate-600 max-w-2xl mx-auto text-lg">
+          <p className="text-slate-600 dark:text-slate-300 max-w-2xl mx-auto text-lg">
             The passionate individuals who ensure every detail of your event is executed flawlessly.
           </p>
         </div>
@@ -79,10 +79,10 @@ const About = () => {
             <motion.div
               key={idx}
               whileHover={{ y: -5 }}
-              className="bg-white rounded-2xl overflow-hidden shadow-md border border-slate-100 flex items-center justify-center p-8 h-full"
+              className="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden shadow-md border border-slate-100 dark:border-slate-700 flex items-center justify-center p-8 h-full transition-colors duration-300"
             >
               <div className="text-center">
-                <h3 className="text-xl font-bold font-display text-slate-900">{member.name}</h3>
+                <h3 className="text-xl font-bold font-display text-slate-900 dark:text-white">{member.name}</h3>
                 <p className="text-brand font-medium mt-2">{member.role}</p>
               </div>
             </motion.div>
